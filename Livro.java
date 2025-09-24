@@ -1,4 +1,6 @@
-public class Livro {
+import java.time.Year;
+
+public abstract class Livro {
     private String titulo;
     private String autor;
     private int anoPublicacao;
@@ -39,14 +41,19 @@ public class Livro {
         this.numeroPaginas = numeroPaginas;
     }
 
-    
+    public abstract String getFormato();
+
+    public final int calcularTempoPublicacao() {
+        return Year.now().getValue() - this.anoPublicacao;
+    }
+
     public String toString() {
-        return "Titulo=" + titulo 
-                + ", autor=" + autor 
-                + ", anoPublicacao=" + anoPublicacao 
+        return "Titulo=" + titulo
+                + ", autor=" + autor
+                + ", anoPublicacao=" + anoPublicacao
                 + ", numeroPaginas=" + numeroPaginas;
     }
-    
-    
-
 }
+
+
+

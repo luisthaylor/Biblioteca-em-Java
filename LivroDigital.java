@@ -2,6 +2,11 @@ public class LivroDigital extends Livro {
     private String formato; // ex pdf, epub
     private double tamanhoArquivo;
 
+    @Override
+    public String getFormato() {
+        return formato;
+    }
+
     public LivroDigital(String titulo, String autor, int anoPublicacao, int numeroPaginas, String formato,
             double tamanhoArquivo) {
         super(titulo, autor, anoPublicacao, numeroPaginas);
